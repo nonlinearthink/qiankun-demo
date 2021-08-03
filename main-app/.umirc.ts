@@ -6,16 +6,6 @@ export default defineConfig({
   },
   qiankun: {
     master: {
-      apps: [
-        {
-          name: 'react-sub-app',
-          entry: '//localhost:8001',
-        },
-        {
-          name: 'vue-sub-app',
-          entry: '//localhost:8002',
-        },
-      ],
       jsSandbox: true,
       prefetch: true,
     },
@@ -25,8 +15,10 @@ export default defineConfig({
       path: '/',
       component: '@/layouts/index',
       routes: [
-        { path: '/react', microApp: 'react-sub-app', exact: true },
-        { path: '/vue', microApp: 'vue-sub-app', exact: true },
+        {
+          path: '/welcome',
+          component: '@/pages/Welcome',
+        },
       ],
     },
   ],
