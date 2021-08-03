@@ -8,13 +8,13 @@ const BasicLayout: React.FC = (props) => {
       <Layout.Header></Layout.Header>
       <Layout>
         <Layout.Sider>
-          <Menu multiple={false} theme="dark">
-            <Link to="/react">
-              <Menu.Item key="react">React</Menu.Item>
-            </Link>
-            <Link to="/vue">
-              <Menu.Item key="vue">Vue</Menu.Item>
-            </Link>
+          <Menu theme="dark">
+            <Menu.Item key="react">
+              <Link to="/react">React</Link>
+            </Menu.Item>
+            <Menu.Item key="vue">
+              <Link to="/vue">Vue</Link>
+            </Menu.Item>
           </Menu>
         </Layout.Sider>
         <Layout>
