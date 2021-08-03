@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+// 接口返回值的类型定义
 type MicroAppConfig = {
   name: string;
   entry: string;
@@ -36,3 +39,13 @@ export const qiankun = fetch('/api/microApps')
       // 支持更多的其他配置，详细看这里 https://qiankun.umijs.org/zh/api/#start-opts
     };
   });
+
+// 返回给子应用的数据
+export function useQiankunStateForSlave() {
+  const [count, setCount] = useState(0);
+
+  return {
+    count,
+    setCount,
+  };
+}
