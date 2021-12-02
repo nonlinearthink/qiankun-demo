@@ -19,6 +19,10 @@ export default defineConfig({
           path: '/welcome',
           component: '@/pages/Welcome',
         },
+        {
+          path: '/memory',
+          component: '@/pages/Memory',
+        },
       ],
     },
   ],

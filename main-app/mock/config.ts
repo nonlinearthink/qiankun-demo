@@ -12,6 +12,11 @@ export default {
         entry: '//localhost:8002',
         route: '/vue',
       },
+      {
+        name: 'react2-sub-app',
+        entry: '//localhost:8003',
+        route: '/react2',
+      },
     ],
   },
 };

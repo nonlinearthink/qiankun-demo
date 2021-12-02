@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
@@ -17,10 +17,3 @@ const routes: Array<RouteRecordRaw> = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
 ];
-
-const router = createRouter({
-  history: createWebHistory(window.__POWERED_BY_QIANKUN__ ? "/vue" : ""),
-  routes,
-});
-
-export default router;

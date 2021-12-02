@@ -15,6 +15,9 @@ const BasicLayout: React.FC = (props) => {
             <Menu.Item key="vue">
               <Link to="/vue">Vue</Link>
             </Menu.Item>
+            <Menu.Item key="Memory">
+              <Link to="/memory">Memory</Link>
+            </Menu.Item>
           </Menu>
         </Layout.Sider>
         <Layout>

@@ -4,10 +4,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: [
-    { path: '/', component: '@/pages/index' },
-    { path: '/test', component: '@/pages/Test' },
-  ],
+  routes: [{ path: '/', component: '@/pages/index' }],
   qiankun: {
     slave: {},
   },

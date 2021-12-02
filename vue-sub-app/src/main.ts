@@ -1,12 +1,41 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./router";
+import { routes } from "./router";
+import {
+  createRouter,
+  createWebHistory,
+  createWebHashHistory,
+  createMemoryHistory,
+} from "vue-router";
+
+type createHistoryType =
+  | typeof createWebHistory
+  | typeof createWebHashHistory
+  | typeof createMemoryHistory;
 
 let instance: ReturnType<typeof createApp> | null;
 
 // 自定义渲染函数
 function render(props: any) {
   const { container } = props as any;
+  console.log("props from master", props);
+  let createHistory: createHistoryType;
+  const historyType = props.history.type || props.history;
+  console.log("history type", historyType);
+  switch (historyType) {
+    case "hash":
+      createHistory = createWebHashHistory;
+      break;
+    case "memory":
+      createHistory = createMemoryHistory;
+      break;
+    default:
+      createHistory = createWebHistory;
+  }
+  const router = createRouter({
+    history: createHistory(window.__POWERED_BY_QIANKUN__ ? "/vue" : ""),
+    routes,
+  });
   // 创建实例
   instance = createApp(App);
   instance.use(router);

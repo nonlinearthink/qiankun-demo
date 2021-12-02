@@ -3,13 +3,11 @@ import logo from '@/assets/logo.svg';
 import { useModel } from 'umi';
 import { Button } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import Links from '@/components/Links';
 
 export default function IndexPage() {
   const masterProps = useModel('@@qiankunStateFromMaster');
   return (
     <div className="App">
-      <Links />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <a
@@ -18,7 +16,7 @@ export default function IndexPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React 2
         </a>
         <p
           style={{
